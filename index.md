@@ -11,16 +11,25 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Slide 1
 
 1. Edit YAML front matter
 2. Write using R Markdown
 3. Use an empty line followed by three dashes to separate slides!
 
---- .class #id 
-
+---------------------
 ## Slide 2
+slide2
 
+---------------------
+## Slide 3
+slide3
 
+---------------------
+## Slide 4
+slide4
 
+---------------------
+## Slide 5
+slide5
 
