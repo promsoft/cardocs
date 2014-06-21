@@ -3,37 +3,26 @@ title       : Explore 1974 Motor Trend dataset
 subtitle    : with shiny app
 author      : Dmitry Kolodezev
 job         : student
-framework   : html5slides   # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012   # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : []     # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 ## Explore 1974 Motor Trend dataset
 
 
-If you goal 
+Carsdata - application for exploratory analisys on mtcars dataset.
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+https://promsoft.shinyapps.io/carsdata/
 
----------------------
-## Scatterplot
-```
-Model: lm(mpg~hp) # How cofounder variable linked to mileage
-```
+With this application, we can check how variables related to car fuel consumption.
 
-![plot of chunk scatterplot](assets/fig/scatterplot.png) 
-
----------------------
-## Regression coefficients
 ```
-Model: lm(mpg~am+cyl+am:cyl)
+Example model: lm(mpg~am+cyl+am:cyl)
 ```
-For the complete model, 
-you can access R^2 and reqression coeffitients. 
+For each model, you can access R Squared and reqression coefficients. 
 
 
 ```
@@ -43,6 +32,18 @@ you can access R^2 and reqression coeffitients.
 ## cyl           -1.976     0.4485  -4.405 1.407e-04
 ## am:cyl        -1.305     0.7070  -1.846 7.551e-02
 ```
+
+---------------------
+## Scatterplot
+```
+Model: lm(mpg~hp) # How cofounder variable linked to mileage
+```
+At the Scatterplot tab, we can access
+relationship between selectaed 
+variable and mileage&nbsp;per&nbsp;gallon,
+separately for each transmission type.
+
+![plot of chunk scatterplot](assets/fig/scatterplot.png) 
 
 ---------------------
 ## Box Plot

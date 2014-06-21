@@ -3,10 +3,10 @@ title       : Explore 1974 Motor Trend dataset
 subtitle    : with shiny app
 author      : Dmitry Kolodezev
 job         : student
-framework   : html5slides   # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012   # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : []     # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
@@ -67,33 +67,34 @@ do.box <- function(x) {
 }
 ```
 
-If you goal 
+Carsdata - application for exploratory analisys on mtcars dataset.
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+https://promsoft.shinyapps.io/carsdata/
+
+With this application, we can check how variables related to car fuel consumption.
+
+```
+Example model: lm(mpg~am+cyl+am:cyl)
+```
+For each model, you can access R Squared and reqression coefficients. 
+
+```{r regression, echo=FALSE}
+summary(fit)$coeff
+```
 
 ---------------------
 ## Scatterplot
 ```
 Model: lm(mpg~hp) # How cofounder variable linked to mileage
 ```
+At the Scatterplot tab, we can access
+relationship between selectaed 
+variable and mileage&nbsp;per&nbsp;gallon,
+separately for each transmission type.
 
 ```{r scatterplot, echo=FALSE, fig.width=11, fig.height=5}
 mark.twain('hp')
 
-```
-
----------------------
-## Regression coefficients
-```
-Model: lm(mpg~am+cyl+am:cyl)
-```
-For the complete model, 
-you can access R^2 and reqression coeffitients. 
-
-```{r regression, echo=FALSE}
-summary(fit)$coeff
 ```
 
 ---------------------
