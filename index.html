@@ -34,13 +34,24 @@
 
 <article class="" id="slide-3" style="background:;">
   <h3>Regression coefficients</h3>
-  <p>slide3</p>
+  <pre><code>Model: lm(mpg~am+cyl+am:cyl)
+</code></pre>
+
+<pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
+## (Intercept)   30.874     3.1882   9.684 1.948e-10
+## am            10.175     4.3046   2.364 2.526e-02
+## cyl           -1.976     0.4485  -4.405 1.407e-04
+## am:cyl        -1.305     0.7070  -1.846 7.551e-02
+</code></pre>
 
 </article>
 
 <article class="" id="slide-4" style="background:;">
   <h3>QQ Plot</h3>
-  <p>slide4</p>
+  <pre><code>Model: lm(mpg~am+cyl+am:cyl)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-4.png" alt="plot of chunk unnamed-chunk-4"> </p>
 
 </article>
 
@@ -48,6 +59,8 @@
   <h3>Resuduals Plot</h3>
   <pre><code>Model: lm(mpg~am+cyl+am:cyl)
 </code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-5.png" alt="plot of chunk unnamed-chunk-5"> </p>
 
 </article>
 

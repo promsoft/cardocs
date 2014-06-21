@@ -11,6 +11,12 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 ## Explore 1974 Motor Trend dataset
+```{r echo=FALSE}
+data(mtcars)
+fit <- lm(mpg~am+cyl+am:cyl, mtcars)
+res <- residuals(fit)
+fits <- fitted(fit)
+```
 
 If you goal 
 
@@ -22,13 +28,32 @@ If you goal
 ## Scatterplot
 slide2
 
+```{r}
+
+```
 ---------------------
 ## Regression coefficients
-slide3
+```
+Model: lm(mpg~am+cyl+am:cyl)
+```
+
+```{r echo=FALSE}
+summary(fit)$coeff
+```
 
 ---------------------
 ## QQ Plot
-slide4
+```
+Model: lm(mpg~am+cyl+am:cyl)
+```
+
+```{r echo=FALSE}
+parmar <- par('mar')
+par(mar = c(4, 4, 0, 2))
+qqnorm(res, main='')
+qqline(res, main='')
+par(mar=parmar)
+```
 
 ---------------------
 ## Resuduals Plot
@@ -36,7 +61,12 @@ slide4
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-```{r}
+```{r echo=FALSE}
+parmar <- par('mar')
+par(mar = c(4, 4, 0, 2))
+plot(res ~ fits)
+abline(h = 0)
+par(mar=parmar)
 
 ```
 

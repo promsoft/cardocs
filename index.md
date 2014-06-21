@@ -12,6 +12,7 @@ knit        : slidify::knit2slides
 ---
 ## Explore 1974 Motor Trend dataset
 
+
 If you goal 
 
 1. Edit YAML front matter
@@ -22,13 +23,29 @@ If you goal
 ## Scatterplot
 slide2
 
+
 ---------------------
 ## Regression coefficients
-slide3
+```
+Model: lm(mpg~am+cyl+am:cyl)
+```
+
+
+```
+##             Estimate Std. Error t value  Pr(>|t|)
+## (Intercept)   30.874     3.1882   9.684 1.948e-10
+## am            10.175     4.3046   2.364 2.526e-02
+## cyl           -1.976     0.4485  -4.405 1.407e-04
+## am:cyl        -1.305     0.7070  -1.846 7.551e-02
+```
 
 ---------------------
 ## QQ Plot
-slide4
+```
+Model: lm(mpg~am+cyl+am:cyl)
+```
+
+![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4.png) 
 
 ---------------------
 ## Resuduals Plot
@@ -36,5 +53,5 @@ slide4
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-
+![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5.png) 
 
