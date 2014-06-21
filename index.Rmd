@@ -16,6 +16,12 @@ data(mtcars)
 fit <- lm(mpg~am+cyl+am:cyl, mtcars)
 res <- residuals(fit)
 fits <- fitted(fit)
+color0 <- 'turquoise4'
+color1 <- 'darkorange'
+color2 <- 'gray'
+
+set0 <- mtcars[mtcars$am==0,]
+set1 <- mtcars[mtcars$am==1,]
 
 mark.twain <- function(x) {
   parmar <- par('mar')
@@ -69,16 +75,22 @@ If you goal
 
 ---------------------
 ## Scatterplot
-slide2
+```
+Model: lm(mpg~hp) # How cofounder variable linked to mileage
+```
 
-```{r scatterplot, echo=FALSE}
+```{r scatterplot, echo=FALSE, fig.width=11, fig.height=5}
+mark.twain('hp')
 
 ```
+
 ---------------------
 ## Regression coefficients
 ```
 Model: lm(mpg~am+cyl+am:cyl)
 ```
+For the complete model, 
+you can access R^2 and reqression coeffitients. 
 
 ```{r regression, echo=FALSE}
 summary(fit)$coeff
@@ -86,12 +98,10 @@ summary(fit)$coeff
 
 ---------------------
 ## Box Plot
-```
-Model: lm(mpg~am+cyl+am:cyl)
-```
+Cofounder must be similary distributed in both car groups. For example, using number of forward gears as cofounder may be problematic, since number of gears was tightly coupled with transmission type.
 
 ```{r qqplot, echo=FALSE, fig.width=11, fig.height=5}
-do.box('cyl')
+do.box('gear')
 ```
 
 ---------------------
@@ -111,4 +121,4 @@ qqnorm(res, main='')
 qqline(res, main='')
 ```
 
-На этих страницах мы можем проверить 
+In these pages some model quality assurance tools was available. We can check our data for heterosсedasticity and check residual distribution for normality. 

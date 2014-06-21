@@ -28,7 +28,10 @@
 
 <article class="" id="slide-2" style="background:;">
   <h3>Scatterplot</h3>
-  <p>slide2</p>
+  <pre><code>Model: lm(mpg~hp) # How cofounder variable linked to mileage
+</code></pre>
+
+<p><img src="assets/fig/scatterplot.png" alt="plot of chunk scatterplot"> </p>
 
 </article>
 
@@ -36,6 +39,9 @@
   <h3>Regression coefficients</h3>
   <pre><code>Model: lm(mpg~am+cyl+am:cyl)
 </code></pre>
+
+<p>For the complete model, 
+you can access R<sup>2</sup> and reqression coeffitients. </p>
 
 <pre><code>##             Estimate Std. Error t value  Pr(&gt;|t|)
 ## (Intercept)   30.874     3.1882   9.684 1.948e-10
@@ -48,8 +54,7 @@
 
 <article class="" id="slide-4" style="background:;">
   <h3>Box Plot</h3>
-  <pre><code>Model: lm(mpg~am+cyl+am:cyl)
-</code></pre>
+  <p>Cofounder must be similary distributed in both car groups. For example, using number of forward gears as cofounder may be problematic, since number of gears was tightly coupled with transmission type.</p>
 
 <p><img src="assets/fig/qqplot.png" alt="plot of chunk qqplot"> </p>
 
@@ -62,7 +67,7 @@
 
 <p><img src="assets/fig/resplot.png" alt="plot of chunk resplot"> </p>
 
-<p>На этих страницах мы можем проверить </p>
+<p>In these pages some model quality assurance tools was available. We can check our data for heterosсedasticity and check residual distribution for normality. </p>
 
 </article>
 

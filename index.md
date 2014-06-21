@@ -21,14 +21,19 @@ If you goal
 
 ---------------------
 ## Scatterplot
-slide2
+```
+Model: lm(mpg~hp) # How cofounder variable linked to mileage
+```
 
+![plot of chunk scatterplot](assets/fig/scatterplot.png) 
 
 ---------------------
 ## Regression coefficients
 ```
 Model: lm(mpg~am+cyl+am:cyl)
 ```
+For the complete model, 
+you can access R^2 and reqression coeffitients. 
 
 
 ```
@@ -41,9 +46,7 @@ Model: lm(mpg~am+cyl+am:cyl)
 
 ---------------------
 ## Box Plot
-```
-Model: lm(mpg~am+cyl+am:cyl)
-```
+Cofounder must be similary distributed in both car groups. For example, using number of forward gears as cofounder may be problematic, since number of gears was tightly coupled with transmission type.
 
 ![plot of chunk qqplot](assets/fig/qqplot.png) 
 
@@ -55,4 +58,4 @@ Model: lm(mpg~am+cyl+am:cyl)
 
 ![plot of chunk resplot](assets/fig/resplot.png) 
 
-На этих страницах мы можем проверить 
+In these pages some model quality assurance tools was available. We can check our data for heterosсedasticity and check residual distribution for normality. 
