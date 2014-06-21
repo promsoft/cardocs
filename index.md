@@ -38,6 +38,7 @@ For each model, you can access R Squared and reqression coefficients.
 ```
 Model: lm(mpg~hp) # How cofounder variable linked to mileage
 ```
+
 At the Scatterplot tab, we can access
 relationship between selectaed 
 variable and mileage&nbsp;per&nbsp;gallon,
