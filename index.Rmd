@@ -78,6 +78,7 @@ Example model: lm(mpg~am+cyl+am:cyl)
 ```
 For each model, you can access R Squared and reqression coefficients. 
 
+`r paste0("R.squared=", summary(fit)$r.squared)`
 ```{r regression, echo=FALSE}
 summary(fit)$coeff
 ```

@@ -24,6 +24,7 @@ Example model: lm(mpg~am+cyl+am:cyl)
 ```
 For each model, you can access R Squared and reqression coefficients. 
 
+R.squared=0.785157554474666
 
 ```
 ##             Estimate Std. Error t value  Pr(>|t|)
