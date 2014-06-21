@@ -40,18 +40,19 @@ Model: lm(mpg~am+cyl+am:cyl)
 ```
 
 ---------------------
-## QQ Plot
+## Box Plot
 ```
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4.png) 
+![plot of chunk qqplot](assets/fig/qqplot.png) 
 
 ---------------------
-## Resuduals Plot
+## Resuduals Plot and QQ Plo
 ```
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5.png) 
+![plot of chunk resplot](assets/fig/resplot.png) 
 
+На этих страницах мы можем проверить 

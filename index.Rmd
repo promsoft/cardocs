@@ -11,11 +11,54 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 ## Explore 1974 Motor Trend dataset
-```{r echo=FALSE}
+```{r main, echo=FALSE}
 data(mtcars)
 fit <- lm(mpg~am+cyl+am:cyl, mtcars)
 res <- residuals(fit)
 fits <- fitted(fit)
+
+mark.twain <- function(x) {
+  parmar <- par('mar')
+  par(mar = c(4, 4, 0, 2))
+  plot(mtcars[[x]]
+       , mtcars$mpg
+       , col=ifelse(mtcars$am==0, color0, color1)
+       , xlab=x
+       , ylab='mpg')
+  if(x == 0) {
+    fit2 <- lm(mpg~am, mtcars)
+    abline(fit2, col=color2, lty=3, lw=2)    
+    
+  } else {
+    formula0 <- paste0('mpg~', x)
+    fit0 <- lm(formula(formula0), set0)
+    abline(fit0, col=color0, lw=2)
+    
+    fit1 <- lm(formula(formula0), set1)
+    abline(fit1, col=color1, lw=2)
+    
+    fit2 <- lm(formula(formula0), mtcars)
+    abline(fit2, col=color2, lty=3, lw=2)    
+  }
+  
+  legend("topright", pch = c(1, 1, 45, 45, 45)
+         , col = c(color0, color1, color0, color1, color2)
+         , legend = c("manual", "automatic", "marg. manual", "marg. auto", paste0("mpg~", x))
+         )
+  f.diff <- summary(fit1)$coeff - summary(fit0)$coeff 
+  par(mar=parmar)
+}
+
+do.box <- function(x) {
+  parmar <- par('mar')
+  par(mar = c(4, 4, 0, 2))
+  boxplot(formula(paste0(x, '~am'))
+          , data = mtcars
+          , col = c('turquoise4', 'darkorange')
+          , ylab = x
+          , names = c('manual', 'automatic'))
+  par(mar=parmar)
+}
 ```
 
 If you goal 
@@ -28,7 +71,7 @@ If you goal
 ## Scatterplot
 slide2
 
-```{r}
+```{r scatterplot, echo=FALSE}
 
 ```
 ---------------------
@@ -37,36 +80,35 @@ slide2
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-```{r echo=FALSE}
+```{r regression, echo=FALSE}
 summary(fit)$coeff
 ```
 
 ---------------------
-## QQ Plot
+## Box Plot
 ```
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-```{r echo=FALSE}
-parmar <- par('mar')
-par(mar = c(4, 4, 0, 2))
-qqnorm(res, main='')
-qqline(res, main='')
-par(mar=parmar)
+```{r qqplot, echo=FALSE, fig.width=11, fig.height=5}
+do.box('cyl')
 ```
 
 ---------------------
-## Resuduals Plot
+## Resuduals Plot and QQ Plo
 ```
 Model: lm(mpg~am+cyl+am:cyl)
 ```
 
-```{r echo=FALSE}
-parmar <- par('mar')
-par(mar = c(4, 4, 0, 2))
+```{r resplot, echo=FALSE, fig.width=11, fig.height=5}
+#parmar <- par('mar')
+par(mfrow = c(1, 2))
+#par(mar = c(4, 4, 0, 2))
 plot(res ~ fits)
 abline(h = 0)
-par(mar=parmar)
 
+qqnorm(res, main='')
+qqline(res, main='')
 ```
 
+На этих страницах мы можем проверить 
